@@ -1,0 +1,13 @@
+Modulos principales
+
+npm i express // framework para crear el servidor y manejar peticiones http y procesar datos a medida que el usuario va visitando las distintas URL
+npm i bcryptjs // para cifrar las contraseñas de los usuarios antes de guardarlas en la base de datos
+npm i cors // para poder despues comunicar este backend con el frontend. El back en un puerto de un servidor se comunica con el servidor de un front en otro puerto.
+npm i dotenv // Para manejar las variables de entorno
+npm i jsonwebtoken // para autenticar usuarios con un token único
+npm i mongoose // para conectarse a la base de datos y manipular las peticiones. Es un ORM
+npm i morgan // Para ver por consola las consultas o peticiones que van llegando al servidor
+npm i helmet // Ayuda a proteger la aplicación de algunas vulnerabilidades web conocidas mediante el establecimiento correcto de cabeceras HTTP.
+
+npm i nodemon // para que tengan efectos los cambios sin tener que cerrar y levantar el server de nuevo
+npm i body-parser
