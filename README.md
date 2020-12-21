@@ -1,26 +1,19 @@
-# API REST – IT-Shirts
+# API REST – IT-Shirts 😎
 
-Es un backend de una tienda virtual de camisetas de Tecnologías IT, realizado con NODE (express), MONGODB (mongoose) y JWT para registrar usuarios y definir diferentes roles como admin, moderador y usuario con autorizaciones y permisos para las diferentes rutas, de acuerdo a su nivel de jerarquía. El admin, tendrá a disposición todos los permisos para el CRUD básico de los productos, no así el usuario que solo podrá obtener el listado de los productos ya sea a nivel general o de un producto en particular. 
+Es un backend de una tienda virtual de camisetas de Tecnologías IT, realizado con NODE (express), MONGODB (mongoose) y JWT para autenticar usuarios y definir diferentes roles como admin, moderador y usuario con autorizaciones y permisos para las diferentes rutas, de acuerdo a su nivel de jerarquía. El admin, tendrá a disposición todos los permisos para el CRUD básico de los productos. No así el usuario, que solo podrá obtener el listado de los productos ya sea a nivel general o de un producto en particular pero no tendrá permisos para modificar productos, darlos de alta o eliminarlos. 
 
+Instrucciones para su instalación y uso 🤓
 
+1- crear una carpeta donde guardar el proyecto y dentro de esa carpeta copiar los archivos de este repositorio e ingresar npm i en la consola para instalar los node_modules.
 
-## Comenzando 🚀
+2- Crear un archivo .env en el directorio raíz del proyecto y agregar en él, tus variables de entorno de acuerdo a la siguiente configuración:
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-No olvides instalar los **node_modules** 🤙
-
-### Pre-requisitos 📋
-
-_Para iniciar el proyecto deberás crear un archivo .env en el directorio raíz del proyecto, el mismo deberá contener las siguientes variables de entorno, según los datos que correspondan:_
-
-```
 USER=localhost
 PASSWORD=""
 DBNAME=api_rest_blog
 TOKEN_SECRET=tuclavesecreta
 
-```
+
 
 _La API utiliza mongodb por lo que deberás establecer la conexión con este motor de base de datos dentro del fichero index.js encontrarás lo que necesitas._
 

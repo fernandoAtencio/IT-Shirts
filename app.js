@@ -1,9 +1,12 @@
 // módulos para configurar la app
 const express = require("express");
 const morgan = require("morgan");
+const {crearRol} = require("./utils/initialSetup");
 
 // cargamos express para manejar las peticiones http
 const app = express();
+// Creamos los roles por defecto
+crearRol();
 
 // Cargamos morgan Para ver por consola las consultas http que van llegando al servidor
 app.use(morgan("dev"));
@@ -21,8 +24,8 @@ app.get("/", (req, res) => {
 });
 
 // Cargamos las rutas
-app.use("/usuarios", usuarios);
-app.use("/auth", auth);
-app.use("/productos", productos);
+app.use("/api/usuarios", usuarios);
+app.use("/api/auth", auth);
+app.use("/api/productos", productos);
 
 module.exports = app;
