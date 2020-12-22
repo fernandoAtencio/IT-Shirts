@@ -7,134 +7,269 @@
 	},
 	"item": [
 		{
-			"name": "/productos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/productos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"productos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/productos/:productosID",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "",
-						"type": "text",
-						"disabled": true
+			"name": "productos",
+			"item": [
+				{
+					"name": "/api/productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
 					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"precio\": 850}"
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/productos/5fdfbbaff6d34c36d0286ee1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"productos",
-						"5fdfbbaff6d34c36d0286ee1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/productos/:productosID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/productos/5fdfbbaff6d34c36d0286ee1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"productos",
-						"5fdfbbaff6d34c36d0286ee1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/productos/:productosID",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/productos/5fdfbb71f6d34c36d0286edf",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"productos",
-						"5fdfbb71f6d34c36d0286edf"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/productos",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "",
-						"type": "text",
-						"disabled": true
+				{
+					"name": "/api/productos/:productosID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"precio\": 900}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/5fdfbbaff6d34c36d0286ee1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"5fdfbbaff6d34c36d0286ee1"
+							]
+						}
 					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"remera NodeJs\",\r\n    \"categoria\": \"Remeras\",\r\n    \"precio\": 750,\r\n    \"imagen\": \"https://srv.latostadora.com/designall.dll/nodejs--i:1356237832350135623201709261;s:H_A1;w:700;h:520;k:59f48bca7205337384103116ee45289b.jpg\"\r\n  }"
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/productos",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"productos"
-					]
+				{
+					"name": "/api/productos/:productosID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/5fdfbbaff6d34c36d0286ee1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"5fdfbbaff6d34c36d0286ee1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/productos/:productosID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODU5NjIzMywiZXhwIjoxNjA4NjgyNjMzfQ.ggG7ZZd1LHW3AZBrRKA7Ps4oC2HkDiINshBBPqUv9Vk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/5fe13d73286f02480cf99ae1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"5fe13d73286f02480cf99ae1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/productos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODU5NjIzMywiZXhwIjoxNjA4NjgyNjMzfQ.ggG7ZZd1LHW3AZBrRKA7Ps4oC2HkDiINshBBPqUv9Vk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"remera AngularJs\",\r\n    \"categoria\": \"Remeras\",\r\n    \"precio\": 790,\r\n    \"imagen\": \"https://ih1.redbubble.net/image.562283154.6444/ssrco,classic_tee,mens,101010:01c5ca27c6,front_alt,square_product,600x600.u3.jpg\"\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"atenpay1@hotmail.com\",\r\n    \"password\": \"1234\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/registro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"atenpay3\",\r\n    \"email\": \"atenpay1@hotmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": [\"admin\", \"moderador\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/registro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"registro"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "/api/usuarios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODYwOTAxNiwiZXhwIjoxNjA4Njk1NDE2fQ.PjfJa2DZiHWNXLk3iaoBcycLpbILALp_DbyV8SqCWTg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

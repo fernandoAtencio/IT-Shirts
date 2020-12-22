@@ -1,5 +1,7 @@
 const { Schema, model } = require("mongoose");
 
+
+
 const rolesSchema = new Schema(
   {
     nombre: String,

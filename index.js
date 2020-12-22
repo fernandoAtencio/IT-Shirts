@@ -1,6 +1,6 @@
 // iniciamos el servidor
 const app = require("./app");
-const mongoose = require("./utils/db");
+require("./utils/db");
 
-app.listen(3000);
-console.log("El servidor está escuchando en el puerto", 3000);
+app.listen(app.get("port"));
+console.log("El servidor está corriendo en el puerto", app.get("port"));

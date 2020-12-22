@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { verificarToken, comprobarModerador, comprobarAdmin } = require("./../middlewares/authjwt");
+
 const {
   obtenerProductos,
   obtenerProductosPorID,
@@ -9,9 +11,9 @@ const {
 } = require("./../controllers/productos");
 
 router.get("/", obtenerProductos);
-router.post("/", crearProductos);
+router.post("/", [verificarToken, comprobarAdmin], crearProductos);
 router.get("/:productosID", obtenerProductosPorID);
-router.put("/:productosID", actualizarProductosPorID);
-router.delete("/:productosID", borrarProductosPorID);
+router.put("/:productosID", [verificarToken, comprobarModerador, comprobarAdmin], actualizarProductosPorID);
+router.delete("/:productosID", [verificarToken, comprobarAdmin], borrarProductosPorID);
 
 module.exports = router;

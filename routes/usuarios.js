@@ -1,6 +1,16 @@
 const express = require("express");
 const router = express.Router();
-router.get("/", (req, res) => {
-  res.json("Estas en usuarios");
-});
+const {
+  comprobarUsuariosDuplicados,
+} = require("./../middlewares/comprobarRegistro");
+const { verificarToken, comprobarAdmin } = require("./../middlewares/authjwt");
+
+const { crearUsuarios } = require("../controllers/usuarios");
+
+router.post(
+  "/",
+  [verificarToken, comprobarAdmin, comprobarUsuariosDuplicados],
+  crearUsuarios
+);
+
 module.exports = router;
