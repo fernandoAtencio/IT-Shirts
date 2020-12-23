@@ -1,12 +1,14 @@
 # API REST – IT-Shirts 😎
 
-Es un backend de una tienda virtual de camisetas de Tecnologías IT, realizado con NODE (express), MONGODB (mongoose) y JWT. Los usuarios se registrarán con diferentes roles, tales como admin, moderador y usuario. Esto les dará diferentes permisos para las distintas rutas, de acuerdo a su nivel de jerarquía. El admin, tendrá a disposición todos los permisos para el CRUD básico de los productos y la creación de otros usuarios admin o moderadores. No así el usuario común, que solo podrá obtener el listado de los productos ya sea a nivel general o de un producto en particular por su ID, pero no tendrá permisos para modificar productos, darlos de alta o eliminarlos, ni tampoco, pos supuesto la creación de usuarios.
+Es un backend de una tienda virtual de camisetas de Tecnologías IT, realizado con NODE (express), MONGODB (mongoose) y JWT. Los usuarios se registrarán con diferentes roles, tales como admin, moderador y usuario. Esto les dará diferentes permisos para las distintas rutas, de acuerdo a su nivel de jerarquía. El admin, tendrá a disposición todos los permisos para el CRUD básico de los productos y la creación de otros usuarios admin o moderadores. No así el usuario común, que solo podrá obtener el listado de los productos ya sea a nivel general o de un producto en particular por su ID, pero no tendrá permisos para modificar productos, darlos de alta o eliminarlos, ni tampoco, por supuesto la creación de usuarios.
 
 Instrucciones para su instalación y uso 🤓
 
-1- crear una carpeta donde guardar el proyecto y dentro de esa carpeta copiar los archivos de este repositorio e ingresar npm i en la consola para instalar los node_modules.
+1- Crear una carpeta donde guardar el proyecto y, dentro de esa carpeta, copiar los archivos de este repositorio e ingresar npm i en la consola para instalar los node_modules.
 
 2- Crear un archivo .env en el directorio raíz del proyecto y agregar en él, tus variables de entorno de acuerdo a la siguiente configuración:
+
+```
 #APP
 PORT = "3000" // o el puerto que uses para el server
 ROLES = ["usuario", "admin", "moderador"];
@@ -19,16 +21,22 @@ MAIL_PASSWORD = "tupassword"
 # BASE DE DATOS
 
 MONGODB_URL: "mongodb://localhost/tuBaseDB"
+```
 
-3 - La aplicación tiene un archivo index.js donde se configuró el servidor
+3 - La aplicación tiene un archivo index.js donde se configuró el servidor.
+
 4- Dentro de la carpeta utils hay dos archivos:
--db.js: Donde está la configuración de la base de datos
--initialSetup.js: Donde está la configuración inicial de la aplicación
+
+-db.js: Donde está la configuración de la base de datos.
+
+-initialSetup.js: Donde está la configuración inicial de la aplicación.
+
 
 5- En la carpeta postman, encontrarás un archivo en formato json. Debes instalar postman desde https://www.postman.com/downloads/. Es la aplicación que usarás para probar nuestra API-REST. Una vez instalado postman, solo debes dirigirte a file => import y eliges importar el archivo que está en la carpeta postman. Esto te importará la colección con todas las rutas de la aplicación.
 
-6- Vamos a recorrerlas: 🚴‍♂️
-La colección consta de 3 carpetas: productos, auth y usuarios
+6- Vamos a recorrerlas: 🚴‍♂️.
+
+La colección consta de 3 carpetas: productos, auth y usuarios.
 
 - Carpeta auth
   tiene 2 endpoints
