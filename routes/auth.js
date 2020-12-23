@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const { login, registro } = require("./../controllers/auth");
 const {
   comprobarUsuariosDuplicados,

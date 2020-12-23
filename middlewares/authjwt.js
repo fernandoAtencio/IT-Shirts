@@ -18,7 +18,7 @@ const verificarToken = async (req, res, next) => {
     const usuario = await Usuarios.findById(req.idUsuario, { password: 0 });
     console.log(usuario);
     if (!usuario)
-      return res.status(404).json({ message: "El usuario no encontrado" });
+      return res.status(404).json({ message: "El usuario no ha sido encontrado" });
     next();
   } catch (e) {
     return res.status(401).json({ message: "No está autorizado" });

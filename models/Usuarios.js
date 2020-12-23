@@ -31,7 +31,8 @@ const usuariosSchema = new Schema(
 // Método para cifrar el password ingresado en el registro del usuario antes de guardarlo en la base de datos
 usuariosSchema.statics.encriptarPassword = async (password) => {
   const salt = await bcrypt.genSalt(10);
-  return await bcrypt.hash(password, salt);
+  const hash = await bcrypt.hash(password, salt);
+  return hash;
 };
 // Método para comparar el password guardado en la base de datos con el password ingresado en el login
 usuariosSchema.statics.compararPassword = async (

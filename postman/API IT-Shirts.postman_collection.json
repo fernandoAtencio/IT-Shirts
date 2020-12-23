@@ -249,10 +249,25 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODYwOTAxNiwiZXhwIjoxNjA4Njk1NDE2fQ.PjfJa2DZiHWNXLk3iaoBcycLpbILALp_DbyV8SqCWTg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Federico\",\r\n    \"email\": \"federico@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": \"admin\"\r\n    \r\n  }"
+						},
 						"url": {
 							"raw": "http://localhost:3000/api/usuarios",
 							"protocol": "http",
