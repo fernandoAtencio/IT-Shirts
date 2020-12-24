@@ -29,4 +29,32 @@ const crearUsuarios = async (req, res) => {
   }
 };
 
-module.exports = { crearUsuarios };
+const obtenerUsuarios = async (req, res) => {
+    const usuarios = await Usuarios.find();
+    res.json(usuarios);
+  };
+  const obtenerUsuariosPorID = async (req, res) => {
+    const { usuariosID } = req.params;
+    const usuario = await Usuarios.findById(usuariosID);
+    res.status(200).json(usuario);
+
+  }
+const actualizarUsuariosPorID = async (req, res) => {
+  const { usuariosID } = req.params;
+  const usuarioActualizado = await Usuarios.findByIdAndUpdate(
+    usuariosID,
+    req.body,
+    { new: true }
+  );
+  res.status(200).json(usuarioActualizado);
+};
+const borrarUsuariosPorID = async (req, res) => {
+  const { usuariosID } = req.params;
+  await Usuarios.findByIdAndDelete(usuariosID);
+  res.status(200).json();
+};
+
+
+
+
+module.exports = { crearUsuarios, obtenerUsuarios, obtenerUsuariosPorID, actualizarUsuariosPorID, borrarUsuariosPorID };

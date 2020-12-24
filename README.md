@@ -31,7 +31,6 @@ MONGODB_URL: "mongodb://localhost/tuBaseDB"
 
 -initialSetup.js: Donde está la configuración inicial de la aplicación.
 
-
 5- En la carpeta postman, encontrarás un archivo en formato json. Debes instalar postman desde https://www.postman.com/downloads/. Es la aplicación que usarás para probar nuestra API-REST. Una vez instalado postman, solo debes dirigirte a file => import y eliges importar el archivo que está en la carpeta postman. Esto te importará la colección con todas las rutas de la aplicación.
 
 6- Vamos a recorrerlas: 🚴‍♂️.
@@ -182,11 +181,10 @@ La colección consta de 3 carpetas: productos, auth y usuarios.
 
                   Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, elimina el producto devolviendo un status(200). Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin" )
 
+- Carpeta Usuarios
+  tiene 5 endpoints
 
-- Carpeta Productos
-  tiene 1 endpoint
-
-      b-Crear un nuevo Usuario
+      a-Crear un nuevo Usuario
                   Método: POST
                   URL: http://localhost:3000/api/usuarios
                   Headers:
@@ -211,12 +209,116 @@ La colección consta de 3 carpetas: productos, auth y usuarios.
                           ]
                       }
 
+       b-Obtener todos los usuarios
+                  Método: GET
+                  URL: http://localhost:3000/api/usuarios
+                  Headers:
+                    Key: Content-Type
+                    Value: application-json
+                    Key: x-access-token
+                  Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTI3NjUyOGUyMWRjMGUxMDhhNmI2YyIsImlhdCI6MTYwODY3Njk0NiwiZXhwIjoxNjA4NzYzMzQ2fQ.VNcUne16wH9RhJdxP4vYgJDkos41X5MzBuh947PLAuw (el token de un admin)
+
+                  Body: none
+
+                  Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, Devuelve un arreglo de objetos con todos los usuarios de la base de datos. Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin")
+                   [
+                    {
+                        "roles": [
+                            "5fe1102d0ce9f81d188f1e8a"
+                        ],
+                        "_id": "5fe27bf00e8d6a30b425bde1",
+                        "nombre": "Fede",
+                        "email": "feder@gmail.com",
+                        "password": "$2a$10$n871yoEEzG4ax95EoSOlBuJxHgtgInbnHg3REcwwAGP0eZEldHaoK",
+                        "createdAt": "2020-12-22T23:06:24.816Z",
+                        "updatedAt": "2020-12-22T23:06:24.816Z"
+                    },
+                    {
+                        "roles": [
+                            "5fe1102d0ce9f81d188f1e88"
+                        ],
+                        "_id": "5fe27c090e8d6a30b425bde2",
+                        "nombre": "pedrito7",
+                        "email": "pedrito7@hotmail.com",
+                        "password": "$2a$10$Oao8MI5ZEQnX/f6PZfP4B.ITsbSVGv19ycD7S0fEeFlfwWdDLJ9Oe",
+                        "createdAt": "2020-12-22T23:06:49.559Z",
+                        "updatedAt": "2020-12-22T23:06:49.559Z"
+                    }
+                ]
+
+        c-Obtener un usuario por ID
+                        Método: GET
+                        URL: http://localhost:3000/api/usuarios/5fe27bf00e8d6a30b425bde1 (este número es el ID del usuario)
+                        Headers:
+                            Key: Content-Type
+                            Value: application-json
+                            Key: x-access-token
+                        Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTI3NjUyOGUyMWRjMGUxMDhhNmI2YyIsImlhdCI6MTYwODY3Njk0NiwiZXhwIjoxNjA4NzYzMzQ2fQ.VNcUne16wH9RhJdxP4vYgJDkos41X5MzBuh947PLAuw (el token de un admin)
+
+                        Body: none
+
+                        Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, Devuelve el objeto usuario correspondiente a ese ID. Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin")
+                        
+                            {
+                                "roles": [
+                                    "5fe1102d0ce9f81d188f1e8a"
+                                ],
+                                "_id": "5fe27bf00e8d6a30b425bde1",
+                                "nombre": "Fede",
+                                "email": "feder@gmail.com",
+                                "password": "$2a$10$n871yoEEzG4ax95EoSOlBuJxHgtgInbnHg3REcwwAGP0eZEldHaoK",
+                                "createdAt": "2020-12-22T23:06:24.816Z",
+                                "updatedAt": "2020-12-22T23:06:24.816Z"
+                            },
+
+       d-Modificar un usuario por ID
+                        Método: PUT
+                        URL: http://localhost:3000/api/usuarios/5fe27bf00e8d6a30b425bde1 (este número es el ID del usuario)
+                        Headers:
+                            Key: Content-Type
+                            Value: application-json
+                            Key: x-access-token
+                        Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTI3NjUyOGUyMWRjMGUxMDhhNmI2YyIsImlhdCI6MTYwODY3Njk0NiwiZXhwIjoxNjA4NzYzMzQ2fQ.VNcUne16wH9RhJdxP4vYgJDkos41X5MzBuh947PLAuw (el token de un admin)
+
+                        Body: raw
+                            {
+                                "nombre": "Federico"
+                            }
+
+                        Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, Devuelve el objeto usuario correspondiente a ese ID modificado. Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin")
+                        
+                            {
+                                "roles": [
+                                    "5fe1102d0ce9f81d188f1e8a"
+                                ],
+                                "_id": "5fe27bf00e8d6a30b425bde1",
+                                "nombre": "Federico",
+                                "email": "feder@gmail.com",
+                                "password": "$2a$10$n871yoEEzG4ax95EoSOlBuJxHgtgInbnHg3REcwwAGP0eZEldHaoK",
+                                "createdAt": "2020-12-22T23:06:24.816Z",
+                                "updatedAt": "2020-12-22T23:06:24.816Z"
+                            },                           
+
+       e-Borrar un usuario por ID
+                        Método: DELETE
+                        URL: http://localhost:3000/api/usuarios/5fe27bf00e8d6a30b425bde1 (este número es el ID del usuario)
+                        Headers:
+                               Key: x-access-token
+                               Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTI3NjUyOGUyMWRjMGUxMDhhNmI2YyIsImlhdCI6MTYwODY3Njk0NiwiZXhwIjoxNjA4NzYzMzQ2fQ.VNcUne16wH9RhJdxP4vYgJDkos41X5MzBuh947PLAuw (el token de un admin)
+
+                        Body: none
+
+                        Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, elimina el usuario de el ID provisto devolviendo un status(200). Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin")
+                        
+
+
 7- Construido con 🔧
 
 - [Node](https://nodejs.org/es/)
 - [Express](https://expressjs.com/es/)
 - [MongoDB](https://www.mongodb.com/es)
 - [Mongoose](https://mongoosejs.com/)
+- [Postman](https://www.postman.com/downloads/)
 
 8- Versión 📍
 
@@ -228,4 +330,4 @@ Fernando Atencio, Matías Olmos y Valentín Carneros
 
 10 - Agradecimientos 🤝
 
-Al curso de PWI de UTN, al profe Franco Di Leo, a Jon y a todos los compañeros que han compartido sus experiencias y su tiempo con generosidad. A nuestras familias que nos aguantaron horas y horas enfrente de una máquina sin reproches.
+Al curso de PWI de UTN, al profe Franco Di Leo, a Jon Gibaut y a todos los compañeros que han compartido sus experiencias y su tiempo con generosidad. A nuestras familias que nos aguantaron horas y horas enfrente de una máquina apoyando siempre sin reproches.

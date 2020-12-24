@@ -266,7 +266,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Federico\",\r\n    \"email\": \"federico@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": \"admin\"\r\n    \r\n  }"
+							"raw": "{\r\n    \"nombre\": \"Fede\",\r\n    \"email\": \"feder@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": \"admin\"\r\n    \r\n  }"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/usuarios",
@@ -278,6 +278,162 @@
 							"path": [
 								"api",
 								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODgxMTUzMCwiZXhwIjoxNjA4ODk3OTMwfQ.LaudwJY9_Sx0eENHaeIppUlUhV9Y4YLPRMZJy4WNydo"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios/:usuariosID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODgxMTUzMCwiZXhwIjoxNjA4ODk3OTMwfQ.LaudwJY9_Sx0eENHaeIppUlUhV9Y4YLPRMZJy4WNydo"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/5fe0eb2795c2f94d8855520c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"5fe0eb2795c2f94d8855520c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios/:usuariosID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODgxMTUzMCwiZXhwIjoxNjA4ODk3OTMwfQ.LaudwJY9_Sx0eENHaeIppUlUhV9Y4YLPRMZJy4WNydo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nombre\": \"Juan Atencio\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/5fe0eb2795c2f94d8855520c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"5fe0eb2795c2f94d8855520c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/usuarios/:usuariosID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODgxMTUzMCwiZXhwIjoxNjA4ODk3OTMwfQ.LaudwJY9_Sx0eENHaeIppUlUhV9Y4YLPRMZJy4WNydo"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/5fe1234e463bd846405d52d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"5fe1234e463bd846405d52d5"
 							]
 						}
 					},
