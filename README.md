@@ -68,7 +68,7 @@ La colección consta de 3 carpetas: productos, auth y usuarios.
                   "email": "ejemplo@mail.com",
                   "password": "password"
                   }
-              Ejemplo de respuesta: (Si es correcto devuelve un token (Expiran en 24 hs). En caso de que el usuario ya exista, devuelve "El usuario ya existe" o "el email ya existe" y, si ingresamos un rol incorrecto (por ej: superadmin), devuelve "el rol superadmin no existe" )
+              Ejemplo de respuesta: (Si es correcto devuelve un token (Expiran en 24 hs). En caso de que el usuario ya exista, devuelve "El usuario ya existe" o "el email ya existe" y, si ingresamos un rol incorrecto (por ej: superadmin), devuelve "Ese Rol no existe" )
                   {
                   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY3ODQxMywiZXhwIjoxNjA4NzY0ODEzfQ.IIDpd7KU-Tnms3atnhtbcfqnifLjKSn6AVCcbyhZDXk"
                   }
@@ -199,7 +199,7 @@ La colección consta de 3 carpetas: productos, auth y usuarios.
                       "password": "password",
                       "roles": "admin"
                       }
-                  Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, devuelve un objeto del nuevo usuario. Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin", "El usuario o email ya existen", "El rol xxxxx no existe"  )
+                  Ejemplo de respuesta: (Si el token provisto es de un admin y es correcto, devuelve un objeto del nuevo usuario. Si no, recibirás estas respuestas según corresponda: "No se ha provisto un token válido", "no está autorizado", "se requiere el rol de admin", "El usuario o email ya existen", "Ese rol no existe"  )
                      {
                           "_id": "5fe27bf00e8d6a30b425bde1",
                           "nombre": "Fede",

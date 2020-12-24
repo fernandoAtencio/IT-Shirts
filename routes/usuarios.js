@@ -10,6 +10,7 @@ const {
 } = require("../controllers/usuarios");
 const {
   comprobarUsuariosDuplicados,
+  comprobarRolExistente,
 } = require("./../middlewares/comprobarRegistro");
 const { verificarToken, comprobarAdmin } = require("./../middlewares/authjwt");
 
@@ -23,7 +24,7 @@ router.use((req, res, next) => {
 
 router.post(
   "/",
-  [verificarToken, comprobarAdmin, comprobarUsuariosDuplicados],
+  [verificarToken, comprobarAdmin, comprobarUsuariosDuplicados, comprobarRolExistente],
   crearUsuarios
 );
 router.get("/", [verificarToken, comprobarAdmin], obtenerUsuarios);
@@ -34,7 +35,7 @@ router.get(
 );
 router.put(
   "/:usuariosID",
-  [verificarToken, comprobarAdmin],
+  [verificarToken, comprobarAdmin, comprobarRolExistente],
   actualizarUsuariosPorID
 );
 router.delete(

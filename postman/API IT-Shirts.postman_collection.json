@@ -260,13 +260,13 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODY1MTg3OSwiZXhwIjoxNjA4NzM4Mjc5fQ.0yELbjDzD5AVfmn0G7szelYbdH0UbWqFa5YYzj6meqg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTEyNGYxNDYzYmQ4NDY0MDVkNTJkNiIsImlhdCI6MTYwODgxMTUzMCwiZXhwIjoxNjA4ODk3OTMwfQ.LaudwJY9_Sx0eENHaeIppUlUhV9Y4YLPRMZJy4WNydo",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Fede\",\r\n    \"email\": \"feder@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": \"admin\"\r\n    \r\n  }"
+							"raw": "{\r\n    \"nombre\": \"Chichilo2\",\r\n    \"email\": \"chichilo2@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roles\": \"puto\"\r\n    \r\n  }"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/usuarios",
